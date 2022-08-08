@@ -3,8 +3,8 @@ name: Deploy Next.js app
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
+  # pull_request:
+  #   branches: [ main ]
 
 jobs:
   build:
@@ -36,7 +36,7 @@ jobs:
       - name: Build Next.js app
         run: yarn build
         env:
-          URL_PREFIX: ${{ env.REPOSITORY_NAME }}/app
+          URL_PREFIX: ${{ env.REPOSITORY_NAME }}
 
       - name: Export Next.js app
         run: yarn export
