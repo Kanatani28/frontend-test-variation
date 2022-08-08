@@ -26,8 +26,9 @@ https://nextjs.org/docs/basic-features/eslint
 - Prettier
   - 必須級。huskyとも相性がいい
   ```
-  yarn add --dev eslint-config-prettier
+  yarn add --dev prettier eslint-config-prettier
   ```
+  参考: https://yoshitaku-jp.hatenablog.com/entry/2019/02/03/220000
 
 - `eslint-plugin-simple-import-sort`
   - import文のソートが気になる人は設定するのがいい
