@@ -1,0 +1,48 @@
+name: Deploy Next.js app
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+          cache: 'yarn'
+      - name: Install packages
+        run: yarn install --frozen-lockfile
+
+      - name: Dump github context
+        run:  echo "$GITHUB_CONTEXT"
+        shell: bash
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+
+      - name: get repository name
+        run: echo "REPOSITORY_NAME=${GITHUB_REPOSITORY#*/}" >> $GITHUB_ENV
+      - name: Dump github env
+        run: echo "$GITHUB_ENV"
+        shell: bash
+
+      - name: Build Next.js app
+        run: yarn build
+        env:
+          URL_PREFIX: app/${{ env.REPOSITORY_NAME }}
+
+      - name: Export Next.js app
+        run: yarn export
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: out
