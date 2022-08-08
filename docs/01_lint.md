@@ -15,7 +15,6 @@ https://nextjs.org/docs/basic-features/eslint
 
 ## 個人的によくちょい足しするもの
 
-
 - `eslint:recommended` 
   - とりあえず入れている   
     https://www.tam-tam.co.jp/tipsnote/javascript/post11934.html
@@ -38,7 +37,8 @@ https://nextjs.org/docs/basic-features/eslint
   - Jestでテスト書く場合は入れておく
 
 ## その他
-env: esXXXX はとりあえず新しいものを設定している
+- env: esXXXX はとりあえず新しいものを設定している
+- eslintignoreはいい感じに設定しておく。特に*.config.jsは設定した方がいい
 
 ## 参考
 https://zenn.dev/januswel/articles/402774d76424e71ac906
