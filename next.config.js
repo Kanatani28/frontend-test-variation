@@ -1,4 +1,4 @@
-const urlPrefix = process.env.URL_PREFIX ? '/' + process.env.URL_PREFIX : ''
+const urlPrefix = process.env.URL_PREFIX ? "/" + process.env.URL_PREFIX : "";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -6,7 +6,7 @@ const nextConfig = {
   swcMinify: true,
   assetPrefix: urlPrefix,
   basePath: urlPrefix,
-  trailingSlash: true
-}
+  trailingSlash: true,
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
