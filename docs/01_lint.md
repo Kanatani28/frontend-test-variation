@@ -45,6 +45,8 @@
 
 - env: esXXXX はとりあえず新しいものを設定している
 - eslintignore はいい感じに設定しておく。特に\*.config.js は設定した方がいい
+- lintとはちょっと違うけどtsconfigもお好みで設定しておく。
+  - [この辺の設定](https://github.com/Kanatani28/frontend-test-variation/commit/aa992e5361d1f522a5eba8918f2e28aa3104584e#diff-b55cdbef4907b7045f32cc5360d48d262cca5f94062e353089f189f4460039e0R21-R24)あたりはしておくと`import`する際に`../../../`みたいなの書かなくて済む。
 
 ## 参考
 
