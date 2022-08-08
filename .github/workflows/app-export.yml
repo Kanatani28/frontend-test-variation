@@ -36,7 +36,7 @@ jobs:
       - name: Build Next.js app
         run: yarn build
         env:
-          URL_PREFIX: app/${{ env.REPOSITORY_NAME }}
+          URL_PREFIX: ${{ env.REPOSITORY_NAME }}/app
 
       - name: Export Next.js app
         run: yarn export
