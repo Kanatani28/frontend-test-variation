@@ -2,7 +2,7 @@ name: Deploy Next.js app
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   # pull_request:
   #   branches: [ main ]
 
@@ -17,12 +17,12 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16.x
-          cache: 'yarn'
+          cache: "yarn"
       - name: Install packages
         run: yarn install --frozen-lockfile
 
       - name: Dump github context
-        run:  echo "$GITHUB_CONTEXT"
+        run: echo "$GITHUB_CONTEXT"
         shell: bash
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
