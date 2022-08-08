@@ -17,3 +17,16 @@ rules:
   import/no-default-export: error
   simple-import-sort/imports: warn
   simple-import-sort/exports: error
+
+overrides: 
+  # 一部ルールを除外する
+  # default exportの使用が必須なところのみoffにする
+  - files: 
+       - "src/pages/**/*.tsx"
+       - "src/pages/**/*.ts"
+    rules: 
+      'import/no-default-export': 'off'
+  -  files: '**/*.stories.tsx'
+     rules: 
+        'arrow-body-style': 'off'
+        'import/no-default-export': 'off'
